@@ -20,6 +20,5 @@ RUN echo "sendmail_path = /usr/sbin/ssmtp -t" > /etc/php/5.6/mods-available/send
 COPY ./files/xdebug.ini /etc/php/5.6/mods-available/xdebug.ini
 
 # Configure apache modules, php modules, error logging.
-RUN phpenmod -v ALL -s ALL curl \
-&& phpenmod -v ALL -s ALL sendmail \
-&& phpenmod -v ALL -s ALL xdebug
+RUN phpenmod -v ALL -s ALL curl sendmail xdebug
+
